@@ -1,0 +1,16 @@
+/* CSS media queries */
+
+/* Medium screens */
+@media only screen and (min-width: 768px) {
+  header {
+    width: 80%;
+  }
+}
+
+/* Larger screen and above */
+
+@media only screen and (min-width: 1300px) {
+  .hero {
+    max-width: 70%;
+  }
+}

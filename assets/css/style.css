@@ -1,3 +1,6 @@
+/* google font import via link */
+
+@import url("https://fonts.googleapis.com/css2?family=Cabin+Sketch:wght@400;700&family=Luckiest+Guy&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -13,6 +16,8 @@
   --extra-color: hsl(228, 21%, 28%);
   --box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
+  --font-family: "Luckiest Guy", sans-serif;
+  --letter-spacing: 2px;
 }
 
 html {
@@ -45,17 +50,25 @@ body {
 
 header {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
   padding: 2rem;
   width: 100%;
-  margin-inline: auto;
 }
 
 header h1 {
+  font-family: var(--font-family);
+  letter-spacing: var(--letter-spacing);
   font-size: 2rem;
   color: var(--primary-color);
   text-transform: uppercase;
+  margin-right: auto;
+}
+
+.nav-links {
+  margin-top: 1rem;
+  flex: 0 0 100%;
 }
 
 header nav a {
@@ -81,39 +94,65 @@ main {
 }
 
 .hero {
-  max-width: 80%;
+  max-width: 90%;
   margin: 0rem auto;
   display: flex;
+  flex-direction: column;
   background-color: white;
   box-shadow: var(--box-shadow);
-  border-radius: 10px;
+  border-radius: 1rem;
 }
 
 .hero-text {
+  font-family: var(--font-family);
+  letter-spacing: var(--letter-spacing);
+  min-height: 50vh;
+  border-radius: 1rem 0rem 0rem 1rem;
+  padding: 1rem;
   display: flex;
   flex: 1;
   justify-content: center;
   align-items: center;
   font-size: 2rem;
+  text-align: center;
+  color: white;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
 }
 
 .hero-form {
+  border-left: 1px solid rgba(128, 128, 128, 0.365);
+  padding: 2rem;
   height: 100%;
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .hero-form h2 {
+  font-family: var(--font-family);
+  letter-spacing: var(--letter-spacing);
   text-align: center;
-  margin-top: 5rem;
-  font-size: 1.8rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
 }
 
 form {
-  padding: 2rem;
+  margin-top: 2rem;
+  border: 2px solid rgba(128, 128, 128, 0.295);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.1rem;
 }
 
 form label {
-  margin-bottom: 0.1rem;
+  margin-bottom: 0.5rem;
   display: block;
 }
 
@@ -126,13 +165,16 @@ button {
 
 input[type="text"],
 textarea {
-  padding: 12px 20px;
+  padding: 8px;
   outline: none;
 }
 
-input[type="text"]:focus,
+input[type="text"]:focus {
+  border: 2px solid var(--secondary-color);
+}
+
 textarea:focus {
-  border: 3px solid var(--secondary-color);
+  border: 2px solid var(--secondary-color);
 }
 
 .form-group {
@@ -140,14 +182,15 @@ textarea:focus {
 }
 
 .btn {
-  background-color: black;
+  background-color: var(--extra-color);
   color: white;
   padding: 0.5rem 1rem;
   border: none;
-  border-radius: 10px;
+  cursor: pointer;
 }
 
 footer {
+  font-size: 1.2rem;
   text-align: center;
   margin: 2rem 0rem;
 }

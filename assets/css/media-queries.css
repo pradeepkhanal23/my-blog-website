@@ -14,6 +14,7 @@
   .nav-links {
     margin-top: 0rem;
     flex: 2;
+    align-self: flex-start;
   }
 
   .theme-switcher {
@@ -24,6 +25,20 @@
   .hero {
     flex-direction: row;
   }
+
+  .hero-text {
+    border-radius: 1rem 0rem 0rem 1rem;
+  }
+
+  /* ------------------------ for blogs page--------------------------------------- */
+
+  .blogs {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .blog {
+    flex: 1 0 40%;
+  }
 }
 
 /* Larger screen and above */
@@ -33,14 +48,21 @@
     max-width: 65%;
   }
   .hero-text {
-    font-size: 2.3rem;
+    font-size: 2.1rem;
   }
-  form,
-  footer {
-    font-size: 1.3rem;
+  form {
+    font-size: 1.2rem;
   }
 
   .hero-form h2 {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  /* ------------------------ for blogs page--------------------------------------- */
+  .blogs {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .blog {
+    flex: 1 0 30%;
   }
 }

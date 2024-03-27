@@ -211,6 +211,12 @@ textarea:focus {
   letter-spacing: var(--letter-spacing);
   color: var(--primary-color);
 }
+.blog-section a {
+  margin-top: 2rem;
+  padding-left: 1.5rem;
+  color: var(--primary-color);
+  font-weight: 600;
+}
 
 .blogs {
   flex: 1;
@@ -258,13 +264,13 @@ textarea:focus {
 }
 
 .portfolio-info {
+  white-space: nowrap;
   font-weight: 600;
   color: var(--primary-color);
-  padding-right: 1.2rem;
   font-size: 1.2rem;
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
+  align-items: center;
 }
 
 .portfolio-info span {

@@ -39,6 +39,10 @@
   .blog {
     flex: 1 0 40%;
   }
+
+  .portfolio-info {
+    align-items: flex-end;
+  }
 }
 
 /* Larger screen and above */

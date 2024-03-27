@@ -1,0 +1,142 @@
+main {
+  flex: 1;
+  width: 100%;
+}
+
+.hero {
+  max-width: 90%;
+  margin: 0rem auto;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: var(--box-shadow);
+  border-radius: 1rem;
+}
+
+.hero-text {
+  font-family: var(--font-family);
+  letter-spacing: var(--letter-spacing);
+  min-height: 50vh;
+  border-radius: 1rem 1rem 0rem 0rem;
+  padding: 2rem;
+  display: flex;
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  text-align: center;
+  color: white;
+  background-color: #4158d0;
+  background-image: linear-gradient(
+    43deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+
+.hero-form {
+  border-left: 1px solid rgba(128, 128, 128, 0.365);
+  padding: 2rem;
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.hero-form h2 {
+  font-family: var(--font-family);
+  letter-spacing: var(--letter-spacing);
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+form {
+  margin-top: 2rem;
+  border: 2px solid rgba(128, 128, 128, 0.694);
+  border-radius: 0.5rem;
+  padding: 1rem;
+  font-size: 1.1rem;
+}
+
+form label {
+  margin-bottom: 0.5rem;
+  display: block;
+  font-weight: 600;
+}
+
+form input,
+textarea,
+button {
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+input[type="text"],
+textarea {
+  padding: 8px;
+  outline: none;
+}
+
+input[type="text"]:focus {
+  border: 2px solid var(--secondary-color);
+}
+
+textarea:focus {
+  border: 2px solid var(--secondary-color);
+}
+
+.form-group {
+  width: 100%;
+}
+
+.btn {
+  background-color: black;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-image: linear-gradient(
+    30deg,
+    #4158d0 0%,
+    #c850c0 46%,
+    #ffcc70 100%
+  );
+}
+
+/* CSS media queries */
+
+/* Medium screens */
+@media only screen and (min-width: 768px) {
+  .hero {
+    flex-direction: row;
+  }
+
+  .hero-text {
+    border-radius: 1rem 0rem 0rem 1rem;
+  }
+}
+
+/* Larger screen and above */
+
+@media only screen and (min-width: 1300px) {
+  .hero {
+    max-width: 65%;
+  }
+  .hero-text {
+    font-size: 2.1rem;
+  }
+  form {
+    font-size: 1.2rem;
+  }
+
+  .hero-form h2 {
+    font-size: 1.8rem;
+  }
+}

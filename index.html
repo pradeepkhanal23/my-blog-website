@@ -25,11 +25,12 @@
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
 
-    <!-- Main style css -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Main style css, it includes common styles for navbar and footer -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
 
-    <!-- Media queries CSS -->
-    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+    <!-- Form style css -->
+    <link rel="stylesheet" href="./assets/css/form.css" />
+
     <title>My Personal Blog</title>
   </head>
   <body>
@@ -43,7 +44,7 @@
         </div>
 
         <nav class="nav-links">
-          <a href="#home" class="active">Home</a>
+          <a href="#home">Home</a>
           <a href="./blog.html">Blog</a>
         </nav>
       </header>
@@ -53,22 +54,38 @@
         </section>
         <section class="hero-form">
           <h2>Whats in your mind?</h2>
-          <form id="blog-form">
+          <form id="blog-form" action="./blog.html">
             <div class="form-group">
               <label for="username">Username</label>
-
-              <input type="text" id="username" name="username" />
+              <input
+                type="text"
+                id="username"
+                placeholder="Lernantino"
+                name="username"
+                autocomplete="given-name"
+              />
             </div>
             <div class="form-group">
               <label for="title">Title</label>
-
-              <input type="text" id="title" name="title" />
+              <input
+                type="text"
+                placeholder="How to center a div"
+                id="title"
+                name="title"
+                autocomplete="family-name"
+              />
             </div>
             <div class="form-group">
               <label for="content">Content</label>
-              <textarea id="content" name="content" rows="2"></textarea>
+              <textarea
+                id="content"
+                placeholder="Content goes here..."
+                name="content"
+                rows="2"
+                autocomplete="off"
+              ></textarea>
             </div>
-            <button type="submit" class="btn">Submit</button>
+            <button type="submit" class="btn">Create Blog</button>
           </form>
         </section>
       </main>
@@ -77,6 +94,8 @@
         All Right Reserved &copy;
       </footer>
     </div>
-    <script src="./assets/js/script.js"></script>
+
+    <!-- common main js logic -->
+    <script src="./assets/js/logic.js"></script>
   </body>
 </html>

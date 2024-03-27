@@ -25,11 +25,12 @@
     <!-- Reset CSS -->
     <link rel="stylesheet" href="./assets/css/reset.css" />
 
-    <!-- Main style css -->
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <!-- Main style css, it includes common styles for navbar and footer -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
 
-    <!-- Media queries CSS -->
-    <link rel="stylesheet" href="./assets/css/media-queries.css" />
+    <!-- Style related to blog -->
+    <link rel="stylesheet" href="./assets/css/blog.css" />
+
     <title>Blog</title>
   </head>
   <body>
@@ -45,10 +46,8 @@
         </nav>
       </header>
       <section class="blog-section">
-        <a href="./index.html"><i class="fa-solid fa-arrow-left"></i> Home</a>
-        <h2>Blog</h2>
-        <div class="blogs">
-          <article class="blog">
+        <div class="blogs" id="blogs-list">
+          <!-- <article class="blog">
             <h3>How to center a Div</h3>
             <p>
               Back in the day, centering an element was one of the trickiest
@@ -58,55 +57,11 @@
               it.
             </p>
             <h4>Posted by @<span>Pradeep</span></h4>
-          </article>
-          <article class="blog">
-            <h3>How to center a Div</h3>
-            <p>
-              Back in the day, centering an element was one of the trickiest
-              things in CSS. As the language has evolved, we’ve been given lots
-              of new tools we can use… But how do we pick the best option? When
-              do we use Flexbox, or CSS Grid, or something else? Let's dig into
-              it.
-            </p>
-            <h4>Posted by @<span>Pradeep</span></h4>
-          </article>
-          <article class="blog">
-            <h3>How to center a Div</h3>
-            <p>
-              Back in the day, centering an element was one of the trickiest
-              things in CSS. As the language has evolved, we’ve been given lots
-              of new tools we can use… But how do we pick the best option? When
-              do we use Flexbox, or CSS Grid, or something else? Let's dig into
-              it.
-            </p>
-            <h4>Posted by @<span>Pradeep</span></h4>
-          </article>
-          <article class="blog">
-            <h3>How to center a Div</h3>
-            <p>
-              Back in the day, centering an element was one of the trickiest
-              things in CSS. As the language has evolved, we’ve been given lots
-              of new tools we can use… But how do we pick the best option? When
-              do we use Flexbox, or CSS Grid, or something else? Let's dig into
-              it.
-            </p>
-            <h4>Posted by @<span>Pradeep</span></h4>
-          </article>
-          <article class="blog">
-            <h3>How to center a Div</h3>
-            <p>
-              Back in the day, centering an element was one of the trickiest
-              things in CSS. As the language has evolved, we’ve been given lots
-              of new tools we can use… But how do we pick the best option? When
-              do we use Flexbox, or CSS Grid, or something else? Let's dig into
-              it.
-            </p>
-            <h4>Posted by @<span>Pradeep</span></h4>
-          </article>
+          </article> -->
         </div>
         <div class="portfolio-info">
           <h5>Portfolio: <span>Pradeep Khanal</span></h5>
-          <h5>Blog: <span>Full Stack Developer</span></h5>
+          <h5>Blog: <span>Web Development Blog</span></h5>
           <h5>Email: <span>pradeepkhanal642@gmail.com</span></h5>
         </div>
       </section>
@@ -116,5 +71,8 @@
         All Right Reserved &copy;
       </footer>
     </div>
+
+    <!-- Javascript for common logic -->
+    <script src="./assets/js/logic.js"></script>
   </body>
 </html>

@@ -257,6 +257,20 @@ textarea:focus {
   color: var(--secondary-color);
 }
 
+.portfolio-info {
+  font-weight: 600;
+  color: var(--primary-color);
+  padding-right: 1.2rem;
+  font-size: 1.2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.portfolio-info span {
+  color: var(--secondary-color);
+}
+
 footer {
   font-size: 1.2rem;
   text-align: center;

@@ -170,6 +170,8 @@ function loadThemeOnPageLoad() {
 }
 
 function initialLoading() {
+  //as soon as the page loads, we load the theme i.e. whatever we have in the local storage
+  loadThemeOnPageLoad();
   let currentPage = window.location.pathname;
 
   if (currentPage.includes("index.html")) {
@@ -177,9 +179,6 @@ function initialLoading() {
   } else {
     loadBlogsFromLocalStorage();
   }
-
-  //as soon as the page loads, we load the theme i.e. whatever we have in the locak storage
-  loadThemeOnPageLoad();
 
   //check for active link
   highlightActiveLink();

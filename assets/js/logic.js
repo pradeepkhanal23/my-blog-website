@@ -103,11 +103,48 @@ function handleSubmit(e) {
   }
 }
 
+//function to toggle the theme
+function toggleTheme() {
+  // Retrieve the current theme status from localStorage
+  const isDarkMode = JSON.parse(localStorage.getItem("darkMode"));
+
+  // Toggle the theme class based on the current status
+  if (!isDarkMode) {
+    document.querySelector("body").classList.add("dark");
+    localStorage.setItem("darkMode", JSON.stringify(true));
+  } else {
+    document.querySelector("body").classList.remove("dark");
+    localStorage.setItem("darkMode", JSON.stringify(false));
+  }
+}
+
+//fucntion that gets called when the page loades
+function loadTheme() {
+  // Retrieve the theme status from localStorage
+  const storedValue = localStorage.getItem("darkMode");
+
+  // If the key does not exist, return null
+  if (storedValue === null) {
+    return null;
+  }
+
+  // Parse the string back to a boolean
+  const parsedValue = JSON.parse(storedValue);
+
+  return parsedValue;
+}
+
 function handleForm() {
   //  Getting elements from the DOM
   const form = document.querySelector("form#blog-form");
 
   form.addEventListener("submit", handleSubmit);
+}
+
+function eventHandlers() {
+  document
+    .querySelector(".theme-switcher i")
+    .addEventListener("click", toggleTheme);
 }
 
 function initialLoading() {
@@ -121,12 +158,28 @@ function initialLoading() {
   }
 }
 
-function init() {
-  //we can to wait till the DOM content is loaded before we call our event handlers
-  window.addEventListener("DOMContentLoaded", initialLoading);
+function loadThemeOnPageLoad() {
+  const isDarkMode = loadTheme();
+  if (isDarkMode) {
+    document.querySelector("body").classList.add("dark");
+  }
+}
 
-  //check for active link
-  highlightActiveLink();
+function init() {
+  //we can to wait till the DOM content is loaded before we call our event handlers and other functions that needs to be loaded initially
+  window.addEventListener("DOMContentLoaded", function () {
+    //to help us call related fucntions to the related page
+    initialLoading();
+
+    //as soon as the page loads, we load the theme i.e. whatever we have in the locak storage
+    loadThemeOnPageLoad();
+
+    //check for active link
+    highlightActiveLink();
+
+    //event listeners are made ready
+    eventHandlers();
+  });
 }
 
 //this function runs as soon as the program starts

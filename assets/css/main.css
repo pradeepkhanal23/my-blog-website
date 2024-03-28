@@ -8,16 +8,30 @@
 }
 
 :root {
+  /* Color Schemes */
   --primary-color: hsl(245, 100%, 60%);
   --bg-color: hsl(214, 26%, 95%);
   --text-color: #333;
   --secondary-color: hsl(338, 77%, 71%);
   --text-muted: hsl(224, 15%, 50%);
   --extra-color: hsl(228, 21%, 28%);
+  --plain-white: white;
+  --border-color: rgba(255, 255, 255, 0.808);
+  --plain-black: black;
+
   --box-shadow: rgba(60, 64, 67, 0.3) 0px 1px 2px 0px,
     rgba(60, 64, 67, 0.15) 0px 2px 6px 2px;
   --font-family: "Luckiest Guy", sans-serif;
   --letter-spacing: 2px;
+}
+
+.dark {
+  --primary-color: orange;
+  --bg-color: black;
+  --text-color: white;
+  --text-muted: rgba(255, 255, 255, 0.868);
+  --plain-white: black;
+  --plain-black: white;
 }
 
 html {
@@ -79,6 +93,7 @@ header nav a {
   padding-bottom: 0.1rem;
   color: var(--text-color);
   transition: border-bottom 0.3s ease; /* Add transition */
+  font-weight: 600;
 }
 
 header .theme-switcher {

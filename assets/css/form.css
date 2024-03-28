@@ -8,9 +8,10 @@ main {
   margin: 0rem auto;
   display: flex;
   flex-direction: column;
-  background-color: white;
+  background-color: var(--plain-white);
   box-shadow: var(--box-shadow);
   border-radius: 1rem;
+  border: 1px solid var(--border-color);
 }
 
 .hero-text {
@@ -36,7 +37,7 @@ main {
 }
 
 .hero-form {
-  border-left: 1px solid rgba(128, 128, 128, 0.365);
+  border-left: 1px solid var(--border-color);
   padding: 2rem;
   height: 100%;
   flex: 1;
@@ -55,7 +56,7 @@ main {
 
 form {
   margin-top: 2rem;
-  border: 2px solid rgba(128, 128, 128, 0.694);
+  border: 2px solid var(--border-color);
   border-radius: 0.5rem;
   padding: 1rem;
   font-size: 1.1rem;
@@ -72,6 +73,10 @@ textarea,
 button {
   width: 100%;
   margin-bottom: 1rem;
+}
+
+::placeholder {
+  font-size: 1rem;
 }
 
 input[type="text"],
@@ -93,8 +98,8 @@ textarea:focus {
 }
 
 .btn {
-  background-color: black;
-  color: white;
+  background-color: var(--plain-black);
+  color: var(--plain-white);
   padding: 0.5rem 1rem;
   border: none;
   cursor: pointer;
@@ -108,6 +113,7 @@ textarea:focus {
     #c850c0 46%,
     #ffcc70 100%
   );
+  color: white;
 }
 
 /* CSS media queries */

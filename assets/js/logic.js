@@ -17,8 +17,6 @@ function highlightActiveLink() {
 function displayBlogsFromLocalStorage() {
   let blogs = JSON.parse(localStorage.getItem("blogs"));
 
-  let info = document.querySelector(".portfolio-info");
-
   if (blogs) {
     blogs.forEach(function (blog) {
       addBlogToTheDOM(blog);
@@ -103,6 +101,20 @@ function handleSubmit(e) {
   }
 }
 
+function toggleIcon() {
+  //getting theme icon from the DOM
+  const themeIcon = document.querySelector(".theme-switcher i");
+
+  //toggling the icon based on its class, if it is a sun, change to moon, if it is a moon, change to sun
+  if (themeIcon.classList.contains("fa-sun")) {
+    themeIcon.classList.remove("fa-sun");
+    themeIcon.classList.add("fa-moon");
+  } else {
+    themeIcon.classList.remove("fa-moon");
+    themeIcon.classList.add("fa-sun");
+  }
+}
+
 //function to toggle the theme
 function toggleTheme() {
   // Retrieve the current theme status from localStorage
@@ -112,9 +124,11 @@ function toggleTheme() {
   if (!isDarkMode) {
     document.querySelector("body").classList.add("dark");
     localStorage.setItem("darkMode", JSON.stringify(true));
+    toggleIcon();
   } else {
     document.querySelector("body").classList.remove("dark");
     localStorage.setItem("darkMode", JSON.stringify(false));
+    toggleIcon();
   }
 }
 
@@ -160,8 +174,12 @@ function initialLoading() {
 
 function loadThemeOnPageLoad() {
   const isDarkMode = loadTheme();
+
   if (isDarkMode) {
     document.querySelector("body").classList.add("dark");
+
+    //because we dont know the icon type when the page loads,we call toggle again to make sure it preserves the value between page reloads
+    toggleIcon();
   }
 }
 

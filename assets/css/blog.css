@@ -22,7 +22,7 @@
   text-align: left;
   background-color: var(--plain-white);
   padding: 1rem;
-  border: 3px solid var(--border-color);
+  border: 2px solid var(--gray-color);
   border-radius: 10px;
   display: flex;
   flex-direction: column;

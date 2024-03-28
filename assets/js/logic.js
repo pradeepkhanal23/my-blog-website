@@ -71,6 +71,7 @@ function addBlogToLocalStorage(blog) {
 }
 
 function handleSubmit(e) {
+  console.log("hey");
   e.preventDefault();
 
   const username = document.querySelector("#username");
@@ -144,7 +145,7 @@ function loadTheme() {
   return parsedValue;
 }
 
-function handleForm() {
+function attachEventListnerInTheForm() {
   //  Getting elements from the DOM
   const form = document.querySelector("form#blog-form");
 
@@ -170,13 +171,11 @@ function loadThemeOnPageLoad() {
 
 function initialLoading() {
   let currentPage = window.location.pathname;
-  switch (currentPage) {
-    case "/index.html":
-      handleForm();
-      break;
-    case "/blog.html":
-      loadBlogsFromLocalStorage();
-      break;
+
+  if (currentPage.includes("index.html")) {
+    attachEventListnerInTheForm();
+  } else {
+    loadBlogsFromLocalStorage();
   }
 
   //as soon as the page loads, we load the theme i.e. whatever we have in the locak storage

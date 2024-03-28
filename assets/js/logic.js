@@ -1,12 +1,8 @@
-const global = {
-  currentPage: window.location.pathname,
-};
-
 function highlightActiveLink() {
   const navLinks = document.querySelectorAll(".nav-links a");
 
   navLinks.forEach(function (link) {
-    if (link.pathname === global.currentPage) {
+    if (link.pathname === window.location.pathname) {
       link.classList.add("active");
     } else {
       link.classList.remove("active");
@@ -14,7 +10,7 @@ function highlightActiveLink() {
   });
 }
 
-function displayBlogsFromLocalStorage() {
+function loadBlogsFromLocalStorage() {
   let blogs = JSON.parse(localStorage.getItem("blogs"));
 
   if (blogs) {
@@ -161,17 +157,6 @@ function eventHandlers() {
     .addEventListener("click", toggleTheme);
 }
 
-function initialLoading() {
-  switch (global.currentPage) {
-    case "/index.html":
-      handleForm();
-      break;
-    case "/blog.html":
-      displayBlogsFromLocalStorage();
-      break;
-  }
-}
-
 function loadThemeOnPageLoad() {
   const isDarkMode = loadTheme();
 
@@ -183,22 +168,25 @@ function loadThemeOnPageLoad() {
   }
 }
 
-function init() {
-  //we can to wait till the DOM content is loaded before we call our event handlers and other functions that needs to be loaded initially
-  window.addEventListener("DOMContentLoaded", function () {
-    //to help us call related fucntions to the related page
-    initialLoading();
+function initialLoading() {
+  let currentPage = window.location.pathname;
+  switch (currentPage) {
+    case "/index.html":
+      handleForm();
+      break;
+    case "/blog.html":
+      loadBlogsFromLocalStorage();
+      break;
+  }
 
-    //as soon as the page loads, we load the theme i.e. whatever we have in the locak storage
-    loadThemeOnPageLoad();
+  //as soon as the page loads, we load the theme i.e. whatever we have in the locak storage
+  loadThemeOnPageLoad();
 
-    //check for active link
-    highlightActiveLink();
+  //check for active link
+  highlightActiveLink();
 
-    //event listeners are made ready
-    eventHandlers();
-  });
+  //event listeners are made ready
+  eventHandlers();
 }
 
-//this function runs as soon as the program starts
-init();
+document.addEventListener("DOMContentLoaded", initialLoading);

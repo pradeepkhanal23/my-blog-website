@@ -93,7 +93,7 @@ function handleSubmit(e) {
     content.value = "";
 
     // Redirect to blog page (after successful submission)
-    window.location.href = "./blog.html";
+    window.location.href = "blog.html";
   }
 }
 
